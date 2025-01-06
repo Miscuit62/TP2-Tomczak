@@ -5,8 +5,11 @@ function Deplacer() {
     const affichage = document.querySelector('.affichage');
     const nouveauDiv = document.createElement('div');
 
-    nouveauDiv.innerHTML = clavier.value;
+    const texteAvecRetourALaLigne = clavier.value.replace(/\n/g, '<br>');
+
+    nouveauDiv.innerHTML = texteAvecRetourALaLigne;
     nouveauDiv.classList.add('texte');
+    
     if (compteur % 2 === 0) {
         nouveauDiv.classList.add('droite');
     } else {
@@ -17,6 +20,7 @@ function Deplacer() {
     clavier.value = '';
     compteur++;
 }
+
 
 function ModifierAspectClavier() {
     const clavier = document.getElementById('clavier');
